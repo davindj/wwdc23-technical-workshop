@@ -8,19 +8,19 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "Shape Generator",
+    name: "MyPlayground",
     platforms: [
         .iOS("15.2")
     ],
     products: [
         .iOSApplication(
-            name: "Shape Generator",
+            name: "MyPlayground",
             targets: ["AppModule"],
-            bundleIdentifier: "com.vynncode.Shape-Generator",
+            bundleIdentifier: "com.vynncode.MyPlayground",
             teamIdentifier: "SNDZ43L8ZN",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .box),
+            appIcon: .placeholder(icon: .magicWand),
             accentColor: .presetColor(.cyan),
             supportedDeviceFamilies: [
                 .pad,
@@ -37,7 +37,10 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "AppModule",
-            path: "."
+            path: ".",
+            resources: [
+                .process("Resources")
+            ]
         )
     ]
 )
